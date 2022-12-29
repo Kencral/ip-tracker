@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+#root main {
+  height: 30vh;
+}
+main .main-content {
+  display: flex;
+  z-index:500;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+main .main-content h1{
+	color: white;
+}
+main .main-content form {
+  max-width: 80%;
+  min-width: 75%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .main-content form input[type='text']{
+  border: none;
+  flex-basis:90%;
+  width: auto;
+  padding: 15px;
+  border-radius: 10px 0 0 10px;
+}
+
+main .main-content form button{
+  border: none;
+  background: #000;
+  flex-basis: 20%;
+  flex-shrink: 0;
+  padding: 25px 10px;
+  border-radius: 0 10px 10px 0;
+}
+main .main-content form button{
+  background-image: url(./icon-arrow.svg);
+  background-clip: border-box;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:25%;
+}
+main .main-content dl {
+  text-align: center;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 75%;
+}
+main .main-content dl dt{
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 59%);
+}
+main .main-content dl dd{
+  margin: 0;
+  margin-bottom: 20px;
+}
+main .main-content dl dd:last-child{
+ margin: 0;
+}
+main .bg-image {
+  background-image: url(./pattern-bg.png);
+  height: 100%;
+}
+.leaflet-container{
+  width: 100%;
+  height: 68vh;
+}
+
