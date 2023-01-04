@@ -3,11 +3,12 @@
 }
 body {
   margin: 0;
+  font-family: 'Rubik', sans-serif;
 }
-#root main {
+#root > div:first-child {
   height: 30vh;
 }
-main .main-content {
+.main-content {
   display: flex;
   z-index:500;
   position: absolute;
@@ -16,10 +17,10 @@ main .main-content {
   flex-direction: column;
   align-items: center;
 }
-main .main-content h1{
+.main-content h1{
 	color: white;
 }
-main .main-content form {
+.main-content form {
   max-width: 80%;
   min-width: 75%;
   display:flex;
@@ -27,7 +28,7 @@ main .main-content form {
   align-items: center;
 }
 
-main .main-content form input[type='text']{
+.main-content form input[type='text']{
   border: none;
   flex-basis:90%;
   width: auto;
@@ -35,7 +36,7 @@ main .main-content form input[type='text']{
   border-radius: 10px 0 0 10px;
 }
 
-main .main-content form button{
+.main-content form button{
   border: none;
   background: #000;
   flex-basis: 20%;
@@ -43,7 +44,7 @@ main .main-content form button{
   padding: 25px 10px;
   border-radius: 0 10px 10px 0;
 }
-main .main-content form button{
+.main-content form button{
   background-image: url(./icon-arrow.svg);
   background-clip: border-box;
   background-origin: border-box;
@@ -51,26 +52,33 @@ main .main-content form button{
   background-position: center;
   background-size:25%;
 }
-main .main-content dl {
+.main-content ul {
   text-align: center;
   background: white;
   padding: 25px;
   border-radius: 10px;
   width: 75%;
+  list-style: none;
 }
-main .main-content dl dt{
+.main-content .info-banner li {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .info-banner .item_title {
   font-size: 0.6rem;
   text-transform: uppercase;
   color: hsl(0, 0%, 59%);
+  display: inline-block;
 }
-main .main-content dl dd{
+.main-content .info-banner .item_info{
   margin: 0;
   margin-bottom: 20px;
+  display: inline-block;
 }
-main .main-content dl dd:last-child{
+.main-content .info-banner .info-banner_item:last-child {
  margin: 0;
 }
-main .bg-image {
+.bg-image {
   background-image: url(./pattern-bg.png);
   height: 100%;
 }
@@ -79,3 +87,60 @@ main .bg-image {
   height: 68vh;
 }
 
+@media (min-width:1440px){
+	.main-content form {
+		min-width: 35%;
+	}
+  .main-content form button {
+    background-size: 10%;
+  }
+  .main-content form input[type='text']{
+    border-radius: 15px 0 0 15px;
+  }
+  .main-content form button {
+    border-radius: 0 15px 15px 0;
+  }
+   .bg-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .main-content .info-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    text-align: start;
+    margin-top: 2%;
+    min-height: 130px;
+    min-width: 600px;
+  }
+  .main-content .info-banner li {
+    justify-content: start;
+    flex-basis: 25%;
+  }
+  .main-content .info-banner > .info-banner_item {
+    border-right: 2px solid #ccc;
+    padding: 0 25px;
+    height: 100px;
+  }
+  .main-content .info-banner > .info-banner_item:last-child {
+    border-right: none;
+  }
+  .main-content .info-banner .item_title{
+    font-size: 0.7rem;
+    font-weight: 500;
+    align-self: start;
+  }
+  .main-content .info-banner .item_info {
+    padding-top: 15px;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  #root > div:first-child{
+    height: 23vh;
+  }
+  .leaflet-container{
+    height: 75.5vh;
+  }
+}

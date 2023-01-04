@@ -1,4 +1,4 @@
-import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
+import {MapContainer, TileLayer, Marker} from 'react-leaflet';
 import L from 'leaflet';
 import iconURL from "./assets/icon-location.svg";
 

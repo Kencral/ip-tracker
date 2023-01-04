@@ -1,4 +1,4 @@
-import {useState, useLayoutEffect, useRef} from "react";
+import {useState, useLayoutEffect} from "react";
 import './App.css'
 import LocationMap from './LocationMap.jsx';
 
@@ -22,24 +22,23 @@ function App() {
           location: `${data.location.country} ${data.location.region}`,
           lat: data.location.lat,
           lng: data.location.lng,
-          loading: false,
+          loading: false, 
         }
-        //infoIp.current = formattedData;
         setSearchIp(formattedData);
       })
   }
   function onSubmit (e) {
-    console.log(e.target[0].value);
     e.preventDefault();
     setSearchIp(previousState => {
       return{...previousState, loading:true};
     });
-    getInfoIp(e.target[0].value);
+    const isIp =  e.target[0].value.includes('.') &&  /\d/.test(e.target[0].value)
+    getInfoIp(e.target[0].value, isIp);
   }
 
   return (
     <>
-      <main>
+      <div>
         <section className='bg-image'>
         </section>
         <section className='main-content'>
@@ -50,18 +49,26 @@ function App() {
               <span></span>
             </button>
           </form>
-          <dl>
-            <dt>Ip Address</dt>
-            <dd>{searchIp.ip}</dd>
-            <dt>Location</dt>
-            <dd>{searchIp.location}</dd>
-            <dt>Timezone</dt>
-            <dd>{searchIp.timezone}</dd>
-            <dt>ISP</dt>
-            <dd>{searchIp.isp}</dd>
-          </dl>
+          <ul className="info-banner">
+            <li className="info-banner_item">         
+              <span className="item_title">Ip Address</span>
+              <span className="item_info">{searchIp.ip}</span>
+            </li>
+            <li className="info-banner_item">         
+              <span className="item_title">Location</span>
+              <span className="item_info">{searchIp.location}</span>
+            </li>
+            <li className="info-banner_item">         
+              <span className="item_title">Timezone</span>
+              <span className="item_info">{searchIp.timezone}</span>
+            </li>
+            <li className="info-banner_item">         
+              <span className="item_title">ISP</span>
+              <span className="item_info" >{searchIp.isp}</span>
+            </li>
+          </ul>
         </section>
-      </main>
+      </div>
       {(searchIp.lat && !searchIp.loading ) ? <LocationMap lat={searchIp.lat} lng={searchIp.lng} /> : <div>loading</div>}
     </>
   )
