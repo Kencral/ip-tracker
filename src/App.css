@@ -45,7 +45,7 @@ body {
   border-radius: 0 10px 10px 0;
 }
 .main-content form button{
-  background-image: url(./icon-arrow.svg);
+  background-image: url(../icon-arrow.svg);
   background-clip: border-box;
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -79,7 +79,7 @@ body {
  margin: 0;
 }
 .bg-image {
-  background-image: url(./pattern-bg.png);
+  background-image: url(../pattern-bg.png);
   height: 100%;
 }
 .leaflet-container{
