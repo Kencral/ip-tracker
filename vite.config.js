@@ -6,6 +6,6 @@ export default defineConfig({
   base: "/ip-tracker/",
   build:{
     outDir: "Docs"
-  }
+  },
   plugins: [react()]
 })
